@@ -42,11 +42,15 @@
             
         <!--Customer List-->
         <!--<StackPanel Grid.Row="1" Background="Crimson">-->
+        <!--<Grid Grid.Row="1"
+              x:Name="customerListGrid"
+              --><!--Name="thisWorksOnlyInFrameElementsGoF12"--><!--
+              Background="Crimson">-->
         <Grid Grid.Row="1"
               x:Name="customerListGrid"
               Background="Crimson">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition x:Name="rowDef" Height="Auto"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
 
