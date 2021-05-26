@@ -70,8 +70,8 @@
             </StackPanel>
 
             <ListView Grid.Row="1">
-                <ListViewItem>Mewan</ListViewItem>
-                <ListViewItem>Buddhi</ListViewItem>
+                <ListViewItem>Thalla</ListViewItem>
+                <ListViewItem>Goyya</ListViewItem>
                 <ListViewItem>Makara Suti</ListViewItem>
             </ListView>
         <!--</StackPanel>-->
