@@ -18,6 +18,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition />
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -25,7 +26,7 @@
         </Grid.RowDefinitions>
             
         <!--Header-->
-        <StackPanel Grid.ColumnSpan="2" Background="#F05A28" Orientation="Horizontal">
+        <StackPanel Grid.ColumnSpan="3" Background="#F05A28" Orientation="Horizontal">
             <Image Source="images/icon.png" Height="90" Margin="5"/>
             <TextBlock Text="Juice Bar Customers"
                        FontSize="30"
@@ -41,7 +42,9 @@
             
         <!--Customer List-->
         <!--<StackPanel Grid.Row="1" Background="Crimson">-->
-        <Grid Grid.Row="1" Background="Crimson">
+        <Grid Grid.Row="1"
+              x:Name="customerListGrid"
+              Background="Crimson">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition />
@@ -49,7 +52,8 @@
 
             <StackPanel Orientation="Horizontal">
                 <Button Margin="10" Click="BtnMove_Click" >
-                    <SymbolIcon Symbol="Forward"/>
+                    <SymbolIcon Symbol="Forward"
+                                x:Name="moveSymbolIcon"/>
                 </Button>
                 <Button Margin="10" Click="BtnAddCustomer_Click" >
                     <StackPanel Orientation="Horizontal">

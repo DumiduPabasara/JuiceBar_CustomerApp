@@ -41,7 +41,13 @@ namespace SexyJuiceBar_CustomerApp
 
         private void BtnMove_Click(object sender, RoutedEventArgs e)
         {
+            int column = (int)customerListGrid.GetValue(Grid.ColumnProperty);
 
+            int newwColumn = column == 0 ? 2 : 0;
+
+            customerListGrid.SetValue(Grid.ColumnProperty, newwColumn);
+
+            moveSymbolIcon.Symbol = newwColumn == 0 ? Symbol.Forward : Symbol.Back;
         }
 
         //private void Button_Click(object sender, RoutedEventArgs e)
