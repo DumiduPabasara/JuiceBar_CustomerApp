@@ -40,20 +40,38 @@
         </StackPanel>
             
         <!--Customer List-->
-        <StackPanel Grid.Row="1" Background="Crimson">
-            <Button Margin="10" Click="BtnAddCustomer_Click" >
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="AddFriend"/>
-                    <TextBlock Text="Add Customer" Margin="5 0 0 0"/>
-                </StackPanel>
-            </Button>
+        <!--<StackPanel Grid.Row="1" Background="Crimson">-->
+        <Grid Grid.Row="1" Background="Crimson">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
 
-            <ListView>
+            <StackPanel Orientation="Horizontal">
+                <Button Margin="10" Click="BtnMove_Click" >
+                    <SymbolIcon Symbol="Forward"/>
+                </Button>
+                <Button Margin="10" Click="BtnAddCustomer_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="AddFriend"/>
+                        <TextBlock Text="Add" Margin="5 0 0 0"/>
+                    </StackPanel>
+                </Button>
+                <Button Margin="10" Click="BtnDeleteCustomer_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Delete"/>
+                        <TextBlock Text="Delete" Margin="5 0 0 0"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <ListView Grid.Row="1">
                 <ListViewItem>Mewan</ListViewItem>
                 <ListViewItem>Buddhi</ListViewItem>
                 <ListViewItem>Makara Suti</ListViewItem>
             </ListView>
-        </StackPanel>
+        <!--</StackPanel>-->
+        </Grid>
             
         <!--Customer Detail-->
         <StackPanel Grid.Row="1" Grid.Column="1">

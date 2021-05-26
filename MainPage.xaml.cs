@@ -34,6 +34,16 @@ namespace SexyJuiceBar_CustomerApp
             await msgDialog.ShowAsync();
         }
 
+        private void BtnDeleteCustomer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnMove_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         //private void Button_Click(object sender, RoutedEventArgs e)
         //{
 
