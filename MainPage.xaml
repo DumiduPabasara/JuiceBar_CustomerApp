@@ -73,10 +73,12 @@
                 </Button>
             </StackPanel>
 
-            <ListView Grid.Row="1">
-                <ListViewItem>Thalla</ListViewItem>
+            <ListView Grid.Row="1"
+                      x:Name="customerListView"
+                      DisplayMemberPath="FirstName">
+                <!--<ListViewItem>Thalla</ListViewItem>
                 <ListViewItem>Goyya</ListViewItem>
-                <ListViewItem>Makara Suti</ListViewItem>
+                <ListViewItem>Makara Suti</ListViewItem>-->
             </ListView>
         <!--</StackPanel>-->
         </Grid>

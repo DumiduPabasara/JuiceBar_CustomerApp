@@ -1,8 +1,11 @@
-﻿using System;
+﻿using SexyJuiceBar_CustomerApp.DataProvider;
+using SexyJuiceBar_CustomerApp.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Popups;
@@ -24,10 +27,36 @@ namespace SexyJuiceBar_CustomerApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private CustomerDataProvider _customerDataProvider;
+
         public MainPage()
         {
             this.InitializeComponent();
+            this.Loaded += MainPage_Loaded;
+            App.Current.Suspending += App_Suspending;
+            _customerDataProvider = new CustomerDataProvider();
         }
+
+
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            customerListView.Items.Clear();
+
+            var customers =  await _customerDataProvider.LoadCustomersAsync();
+
+            foreach (var customer in customers)
+            {
+                customerListView.Items.Add(customer);
+            }
+        }
+
+        private async void App_Suspending(object sender, SuspendingEventArgs e)
+        {
+            var deferral = e.SuspendingOperation.GetDeferral(); //to make sure data saved before app closed
+            await _customerDataProvider.SaveCustomersAsync(customerListView.Items.OfType<Customer>());
+            deferral.Complete(); //to make sure data saved before app closed
+        }
+
 
         private async void BtnAddCustomer_Click(object sender, RoutedEventArgs e)
         {
