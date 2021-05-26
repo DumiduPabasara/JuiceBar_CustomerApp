@@ -6,27 +6,70 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    d:DesignWidth="600"
+    d:DesignHeight="400">
     <!--Learning-->
     <!--<Page.Content>-->
         <Grid>
             <!--<Grid.Children>-->
                 <!--<Button Content="Add Customer" HorizontalAlignment="Left" VerticalAlignment="Top"
                         Margin="10" Click="BtnAddCustomer_Click"/>-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+            
+        <!--Header-->
+        <StackPanel Grid.ColumnSpan="2" Background="#F05A28" Orientation="Horizontal">
+            <Image Source="images/icon.png" Height="90" />
+            <TextBlock Text="Juice Bar Customers"
+                       FontSize="30"
+                       FontWeight="ExtraBold"
+                       Foreground="White" />
+            <TextBlock Text="Version 1.0"
+                       Foreground="#333333" />
+        </StackPanel>
+            
+        <!--Customer List-->
+        <StackPanel Grid.Row="1" Background="#EEEEEE">
+            <Button Margin="10" Click="BtnAddCustomer_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="AddFriend"/>
+                    <TextBlock Text="Add Customer" Margin="5 0 0 0"/>
+                </StackPanel>
+            </Button>
 
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top"
+            <ListView>
+                <ListViewItem>Mewan</ListViewItem>
+                <ListViewItem>Buddhi</ListViewItem>
+                <ListViewItem>Makara Suti</ListViewItem>
+            </ListView>
+        </StackPanel>
+            
+        <!--Customer Detail-->
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBox Header="Firstname" Margin="10" />
+            <TextBox Header="Lastname" Margin="10" />
+            <CheckBox Content="Is Dinking Alcohol" Margin="10"/>
+        </StackPanel>
+                <!--<Button HorizontalAlignment="Left" VerticalAlignment="Top"
                         Margin="10" Click="BtnAddCustomer_Click">
-                    <!--<Button.Content>Add Customer Test</Button.Content> -->
-                    <!--Property element-->
+                    --><!--<Button.Content>Add Customer Test</Button.Content> -->
+                    <!--Property element--><!--
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
-                            <!--<StackPanel.Children>-->
+                            --><!--<StackPanel.Children>--><!--
                                 <SymbolIcon Symbol="AddFriend"/>
                                 <TextBlock Text="Add Customer" Margin="5 0 0 0"/>
-                            <!--</StackPanel.Children>--> <!--no need to use property elements since context syntax-->
+                            --><!--</StackPanel.Children>--> <!--no need to use property elements since context syntax--><!--
                         </StackPanel>
                     </Button.Content>
-                </Button>
+                </Button>-->
             <!--</Grid.Children>-->
         </Grid>
     <!--</Page.Content>-->
