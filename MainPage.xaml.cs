@@ -82,6 +82,39 @@ namespace SexyJuiceBar_CustomerApp
             moveSymbolIcon.Symbol = newwColumn == 0 ? Symbol.Forward : Symbol.Back;
         }
 
+        private void CustomerListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var customer = customerListView.SelectedItem as Customer;
+            txtFirstName.Text = customer?.FirstName ?? "";
+            txtLastName.Text = customer?.LastName ?? "";
+            txtEmail.Text = customer?.Email ?? "";
+            txtPhone.Text = customer?.TeleNo ?? "";
+            chkAlcohol.IsChecked = customer?.IsAlcoholUser;
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateCustomer();
+        }
+
+        private void CheckBox_IsCheckedChanged(object sender, RoutedEventArgs e)
+        {
+            UpdateCustomer();
+        }
+
+        private void UpdateCustomer()
+        {
+            var customer = customerListView.SelectedItem as Customer;
+            if(customer != null)
+            {
+                customer.FirstName = txtFirstName.Text;
+                customer.LastName = txtLastName.Text;
+                customer.Email = txtEmail.Text;
+                customer.TeleNo = txtPhone.Text;
+                customer.IsAlcoholUser = chkAlcohol.IsChecked.GetValueOrDefault();
+            }
+        }
+
         //private void Button_Click(object sender, RoutedEventArgs e)
         //{
 

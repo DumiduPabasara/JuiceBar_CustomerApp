@@ -75,7 +75,8 @@
 
             <ListView Grid.Row="1"
                       x:Name="customerListView"
-                      DisplayMemberPath="FirstName">
+                      DisplayMemberPath="FirstName"
+                      SelectionChanged="CustomerListView_SelectionChanged">
                 <!--<ListViewItem>Thalla</ListViewItem>
                 <ListViewItem>Goyya</ListViewItem>
                 <ListViewItem>Makara Suti</ListViewItem>-->
@@ -85,11 +86,11 @@
             
         <!--Customer Detail-->
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBox Header="First Name" Margin="10" />
-            <TextBox Header="Last Name" Margin="10" />
-            <TextBox Header="Email" Margin="10" />
-            <TextBox Header="Phone Number" Margin="10" />
-            <CheckBox Content="Is Dinking Alcohol" Margin="10"/>
+            <TextBox Header="First Name" Margin="10" x:Name="txtFirstName" TextChanged="TextBox_TextChanged"/>
+            <TextBox Header="Last Name" Margin="10" x:Name="txtLastName" TextChanged="TextBox_TextChanged"/>
+            <TextBox Header="Email" Margin="10" x:Name="txtEmail" TextChanged="TextBox_TextChanged"/>
+            <TextBox Header="Phone Number" Margin="10" x:Name="txtPhone" TextChanged="TextBox_TextChanged"/>
+            <CheckBox Content="Is Dinking Alcohol" Margin="10" x:Name="chkAlcohol" Checked="CheckBox_IsCheckedChanged" Unchecked="CheckBox_IsCheckedChanged"/>
         </StackPanel>
                 <!--<Button HorizontalAlignment="Left" VerticalAlignment="Top"
                         Margin="10" Click="BtnAddCustomer_Click">
