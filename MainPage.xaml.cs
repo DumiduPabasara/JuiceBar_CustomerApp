@@ -60,13 +60,20 @@ namespace SexyJuiceBar_CustomerApp
 
         private async void BtnAddCustomer_Click(object sender, RoutedEventArgs e)
         {
-            var msgDialog = new MessageDialog("Customer Added!");
-            await msgDialog.ShowAsync();
+            var customer = new Customer { FirstName = "New" };
+            customerListView.Items.Add(customer);
+            customerListView.SelectedItem = customer;
+            //var msgDialog = new MessageDialog("Customer Added!");
+            //await msgDialog.ShowAsync();
         }
 
         private void BtnDeleteCustomer_Click(object sender, RoutedEventArgs e)
         {
-
+            var customer = customerListView.SelectedItem as Customer;
+            if(customer != null)
+            {
+                customerListView.Items.Remove(customer);
+            }
         }
 
         private void BtnMove_Click(object sender, RoutedEventArgs e)
