@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-//Learning
+//Learning 2
 
 namespace SexyJuiceBar_CustomerApp
 {
@@ -58,7 +58,7 @@ namespace SexyJuiceBar_CustomerApp
         }
 
 
-        private async void BtnAddCustomer_Click(object sender, RoutedEventArgs e)
+        private void BtnAddCustomer_Click(object sender, RoutedEventArgs e)
         {
             var customer = new Customer { FirstName = "New" };
             customerListView.Items.Add(customer);
