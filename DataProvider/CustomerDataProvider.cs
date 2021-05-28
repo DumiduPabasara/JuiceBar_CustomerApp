@@ -24,9 +24,9 @@ namespace SexyJuiceBar_CustomerApp.DataProvider
             {
                 customerList = new List<Customer>
                 {
-                    new Customer{CustomerId=1, FirstName="Thalla", LastName="Amarakoon", Email="thallamare@gmail.com", TeleNo="0771234567", IsAlcoholUser=true},
-                    new Customer{CustomerId=2, FirstName="Goyya", LastName="Bandara", Email="goybanda@gmail.com", TeleNo="0777654321", IsAlcoholUser=false},
-                    new Customer{CustomerId=1, FirstName="Makara", LastName="Suti", Email="makarasuti@gmail.com", TeleNo="0777894561" }
+                    new Customer {CustomerId=1, FirstName="Thalla", LastName="Amarakoon", Email="thallamare@gmail.com", TeleNo="0771234567", IsAlcoholUser=true},
+                    new Customer {CustomerId=2, FirstName="Goyya", LastName="Bandara", Email="goybanda@gmail.com", TeleNo="0777654321", IsAlcoholUser=false},
+                    new Customer {CustomerId=3, FirstName="Makara", LastName="Suti", Email="makarasuti@gmail.com", TeleNo="0777894561", IsAlcoholUser=false }
                 };
 
             } else
