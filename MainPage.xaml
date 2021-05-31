@@ -1,8 +1,9 @@
 ﻿<Page
     x:Class="SexyJuiceBar_CustomerApp.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:SexyJuiceBar_CustomerApp"
+    xmlns:model="using:SexyJuiceBar_CustomerApp.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -77,6 +78,7 @@
                       x:Name="customerListView"
                       DisplayMemberPath="FirstName"
                       SelectionChanged="CustomerListView_SelectionChanged">
+                <!--<model:Customer FirstName="Bagiri" LastName="Weerasinghe" IsAlcoholUser="True" />-->
                 <!--<ListViewItem>Thalla</ListViewItem>
                 <ListViewItem>Goyya</ListViewItem>
                 <ListViewItem>Makara Suti</ListViewItem>-->

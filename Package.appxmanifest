@@ -32,7 +32,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="SexyJuiceBar_CustomerApp.App">
       <uap:VisualElements
-        DisplayName="SexyJuiceBar_CustomerApp"
+        DisplayName="Customer Details Management App - Sexy Juice Bar"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="SexyJuiceBar_CustomerApp"
