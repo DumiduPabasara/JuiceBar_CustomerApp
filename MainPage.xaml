@@ -5,7 +5,8 @@
     xmlns:local="using:SexyJuiceBar_CustomerApp"
     xmlns:model="using:SexyJuiceBar_CustomerApp.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:usercontrols="using:SexyJuiceBar_CustomerApp.UserControls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     d:DesignWidth="600"
@@ -87,13 +88,14 @@
         </Grid>
             
         <!--Customer Detail-->
-        <StackPanel Grid.Row="1" Grid.Column="1">
+        <usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl" />
+        <!--<StackPanel Grid.Row="1" Grid.Column="1">
             <TextBox Header="First Name" Margin="10" x:Name="txtFirstName" TextChanged="TextBox_TextChanged"/>
             <TextBox Header="Last Name" Margin="10" x:Name="txtLastName" TextChanged="TextBox_TextChanged"/>
             <TextBox Header="Email" Margin="10" x:Name="txtEmail" TextChanged="TextBox_TextChanged"/>
             <TextBox Header="Phone Number" Margin="10" x:Name="txtPhone" TextChanged="TextBox_TextChanged"/>
             <CheckBox Content="Is Dinking Alcohol" Margin="10" x:Name="chkAlcohol" Checked="CheckBox_IsCheckedChanged" Unchecked="CheckBox_IsCheckedChanged"/>
-        </StackPanel>
+        </StackPanel>-->
                 <!--<Button HorizontalAlignment="Left" VerticalAlignment="Top"
                         Margin="10" Click="BtnAddCustomer_Click">
                     --><!--<Button.Content>Add Customer Test</Button.Content> -->
