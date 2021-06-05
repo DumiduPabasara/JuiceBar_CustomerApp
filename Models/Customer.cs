@@ -4,9 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Foundation.Metadata;
 
 namespace SexyJuiceBar_CustomerApp.Models
 {
+
+    [CreateFromString(MethodName = "SexyJuiceBar_CustomerApp.Models.CustomerConvertor.CreateCustomerFromString")]
     public class Customer : Observable
     {
         private string firstName;

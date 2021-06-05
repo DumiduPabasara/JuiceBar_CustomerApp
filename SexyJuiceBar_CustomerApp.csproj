@@ -125,6 +125,7 @@
     </Compile>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Base\Observable.cs" />
+    <Compile Include="Models\CustomerConvertor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\CustomerDetailsUserControl.xaml.cs">
       <DependentUpon>CustomerDetailsUserControl.xaml</DependentUpon>
