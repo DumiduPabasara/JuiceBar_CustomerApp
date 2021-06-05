@@ -88,7 +88,14 @@
         </Grid>
             
         <!--Customer Detail-->
-        <usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl" />
+        <usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl">
+
+            <usercontrols:CustomerDetailsUserControl.Customer>
+                <model:Customer  FirstName="This App is Developed by" LastName="Shaggy" Email="Shaggy@devRuh.com" TeleNo="+940710380835" IsAlcoholUser="False"/>
+            </usercontrols:CustomerDetailsUserControl.Customer>
+            
+        </usercontrols:CustomerDetailsUserControl>
+
         <!--<StackPanel Grid.Row="1" Grid.Column="1">
             <TextBox Header="First Name" Margin="10" x:Name="txtFirstName" TextChanged="TextBox_TextChanged"/>
             <TextBox Header="Last Name" Margin="10" x:Name="txtLastName" TextChanged="TextBox_TextChanged"/>
