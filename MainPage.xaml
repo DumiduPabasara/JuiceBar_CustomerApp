@@ -39,7 +39,7 @@
         <!--Header-->
         <StackPanel Grid.ColumnSpan="3" Background="#F05A28" Orientation="Horizontal">
             <Image Source="images/icon.png" Height="90" Margin="5"/>
-            <TextBlock Text="{StaticResource appTitle}"
+            <TextBlock Text="{ThemeResource appTitle}"
                        FontSize="30"
                        FontWeight="ExtraBold"
                        Foreground="White" 

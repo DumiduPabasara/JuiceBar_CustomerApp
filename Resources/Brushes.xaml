@@ -2,5 +2,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <SolidColorBrush x:Key="customerListBackgroundBrush" Color="Crimson" />
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="customerListBackgroundBrush" Color="Crimson" />
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="customerListBackgroundBrush" Color="Goldenrod" />
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+    <!--<SolidColorBrush x:Key="customerListBackgroundBrush" Color="Crimson" />-->
 </ResourceDictionary>
