@@ -204,6 +204,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\FluentXamlThemeEditorExport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Strings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
