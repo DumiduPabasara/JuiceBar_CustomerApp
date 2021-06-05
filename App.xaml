@@ -6,8 +6,13 @@
     <Application.Resources>
         <!--<model:Customer x:Key="customerThalla" FirstName="Thalla" LastName="React NodeJS JS Developer" Email="Thalla@devRuh.com" TeleNo="+94775387165" IsAlcoholUser="True" />
         <model:Customer x:Key="customerShaggy" FirstName="Shaggy" LastName="C# .NET XAML Developer" Email="shaggy@devRuh.com" TeleNo="+94710380835" IsAlcoholUser="True" />-->
-        <x:String x:Key="appTitle" >Juice Bar Customers</x:String>
-        <SolidColorBrush x:Key="customerListBackgroundBrush" Color="Crimson" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Brushes.xaml" />
+                <ResourceDictionary Source="Resources/Strings.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
     </Application.Resources>
 
 </Application>
