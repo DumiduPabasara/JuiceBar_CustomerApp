@@ -13,7 +13,16 @@
     d:DesignHeight="400">
     <!--Learning-->
     <!--<Page.Content>-->
+    <!--<Page.Resources>
+        --><!--<model:Customer x:Key="customerThalla" FirstName="Thalla" LastName="React NodeJS JS Developer" Email="Thalla@devRuh.com" TeleNo="+94775387165" IsAlcoholUser="True" />
+        <model:Customer x:Key="customerShaggy" FirstName="Shaggy" LastName="C# .NET XAML Developer" Email="shaggy@devRuh.com" TeleNo="+94710380835" IsAlcoholUser="True" />--><!--
+        <x:String x:Key="appTitle" >Juice Bar Customers</x:String>
+        <SolidColorBrush x:Key="customerListBackgroundBrush" Color="Crimson" />
+    </Page.Resources>-->
         <Grid>
+        <Grid.Resources>
+            <!--<model:Customer x:Key="customerShaggy" FirstName="Shaggy Rocks" LastName="C# .NET XAML Developer" Email="shaggy@devRuh.com" TeleNo="+94710380835" IsAlcoholUser="True" />-->
+        </Grid.Resources>
             <!--<Grid.Children>-->
                 <!--<Button Content="Add Customer" HorizontalAlignment="Left" VerticalAlignment="Top"
                         Margin="10" Click="BtnAddCustomer_Click"/>-->
@@ -30,7 +39,7 @@
         <!--Header-->
         <StackPanel Grid.ColumnSpan="3" Background="#F05A28" Orientation="Horizontal">
             <Image Source="images/icon.png" Height="90" Margin="5"/>
-            <TextBlock Text="Juice Bar Customers"
+            <TextBlock Text="{StaticResource appTitle}"
                        FontSize="30"
                        FontWeight="ExtraBold"
                        Foreground="White" 
@@ -50,7 +59,7 @@
               Background="Crimson">-->
         <Grid Grid.Row="1"
               x:Name="customerListGrid"
-              Background="Crimson">
+              Background="{StaticResource customerListBackgroundBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition x:Name="rowDef" Height="Auto"/>
                 <RowDefinition />
@@ -88,8 +97,12 @@
         </Grid>
             
         <!--Customer Detail-->
-        <usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl"
-                                                 Customer=" ********This App is Developed by******** , ****Shaggy Dev****, **Shaggy@devRuh.com**, *+94710380835*, false" />
+        <!--<usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl"
+                                                 Customer=" ********This App is Developed by******** , ****Shaggy Dev****, **Shaggy@devRuh.com**, *+94710380835*, false" />-->
+
+        <!--<usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl"
+                                                 Customer="{StaticResource customerShaggy}" />-->
+        <usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl"/>
 
         <!--<usercontrols:CustomerDetailsUserControl.Customer>
                 <model:Customer  FirstName="This App is Developed by" LastName="Shaggy" Email="Shaggy@devRuh.com" TeleNo="+940710380835" IsAlcoholUser="False"/>

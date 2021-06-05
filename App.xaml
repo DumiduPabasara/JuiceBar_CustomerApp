@@ -3,5 +3,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:SexyJuiceBar_CustomerApp">
+    <Application.Resources>
+        <!--<model:Customer x:Key="customerThalla" FirstName="Thalla" LastName="React NodeJS JS Developer" Email="Thalla@devRuh.com" TeleNo="+94775387165" IsAlcoholUser="True" />
+        <model:Customer x:Key="customerShaggy" FirstName="Shaggy" LastName="C# .NET XAML Developer" Email="shaggy@devRuh.com" TeleNo="+94710380835" IsAlcoholUser="True" />-->
+        <x:String x:Key="appTitle" >Juice Bar Customers</x:String>
+        <SolidColorBrush x:Key="customerListBackgroundBrush" Color="Crimson" />
+    </Application.Resources>
 
 </Application>

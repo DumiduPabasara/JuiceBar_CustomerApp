@@ -35,6 +35,7 @@ namespace SexyJuiceBar_CustomerApp
             this.Loaded += MainPage_Loaded;
             App.Current.Suspending += App_Suspending;
             _customerDataProvider = new CustomerDataProvider();
+            this.Resources.Add()
         }
 
 
