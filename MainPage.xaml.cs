@@ -35,7 +35,8 @@ namespace SexyJuiceBar_CustomerApp
             this.Loaded += MainPage_Loaded;
             App.Current.Suspending += App_Suspending;
             _customerDataProvider = new CustomerDataProvider();
-            this.Resources.Add()
+            RequestedTheme = App.Current.RequestedTheme == ApplicationTheme.Dark ? ElementTheme.Dark : ElementTheme.Light;
+            //this.Resources.Add()
         }
 
 
@@ -99,6 +100,11 @@ namespace SexyJuiceBar_CustomerApp
             //txtEmail.Text = customer?.Email ?? "";
             //txtPhone.Text = customer?.TeleNo ?? "";
             //chkAlcohol.IsChecked = customer?.IsAlcoholUser;
+        }
+
+        private void ButtonToggleTheme_Click(object sender, RoutedEventArgs e)
+        {
+            this.RequestedTheme = RequestedTheme == ElementTheme.Dark ? ElementTheme.Light : ElementTheme.Dark;
         }
 
         //private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
