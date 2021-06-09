@@ -91,16 +91,16 @@ namespace SexyJuiceBar_CustomerApp
             moveSymbolIcon.Symbol = newwColumn == 0 ? Symbol.Forward : Symbol.Back;
         }
 
-        private void CustomerListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var customer = customerListView.SelectedItem as Customer;
-            customerDetailsUserControl.Customer = customer;
-            //txtFirstName.Text = customer?.FirstName ?? "";
-            //txtLastName.Text = customer?.LastName ?? "";
-            //txtEmail.Text = customer?.Email ?? "";
-            //txtPhone.Text = customer?.TeleNo ?? "";
-            //chkAlcohol.IsChecked = customer?.IsAlcoholUser;
-        }
+        //private void CustomerListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    var customer = customerListView.SelectedItem as Customer;
+        //    customerDetailsUserControl.Customer = customer;
+        //    //txtFirstName.Text = customer?.FirstName ?? "";
+        //    //txtLastName.Text = customer?.LastName ?? "";
+        //    //txtEmail.Text = customer?.Email ?? "";
+        //    //txtPhone.Text = customer?.TeleNo ?? "";
+        //    //chkAlcohol.IsChecked = customer?.IsAlcoholUser;
+        //}
 
         private void ButtonToggleTheme_Click(object sender, RoutedEventArgs e)
         {

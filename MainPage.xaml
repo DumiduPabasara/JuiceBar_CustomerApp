@@ -86,21 +86,28 @@
                 </Button>
             </StackPanel>
 
-            <ListView Grid.Row="1"
+            <!--<ListView Grid.Row="1"
                       x:Name="customerListView"
                       DisplayMemberPath="FirstName"
                       SelectionChanged="CustomerListView_SelectionChanged">
-                <!--<model:Customer FirstName="Bagiri" LastName="Weerasinghe" IsAlcoholUser="True" />-->
+                --><!--<model:Customer FirstName="Bagiri" LastName="Weerasinghe" IsAlcoholUser="True" />-->
                 <!--<ListViewItem>Thalla</ListViewItem>
                 <ListViewItem>Goyya</ListViewItem>
-                <ListViewItem>Makara Suti</ListViewItem>-->
+                <ListViewItem>Makara Suti</ListViewItem>--><!--
+            </ListView>-->
+            <ListView Grid.Row="1"
+                      x:Name="customerListView"
+                      DisplayMemberPath="FirstName">
             </ListView>
-        <!--</StackPanel>-->
+            <!--</StackPanel>-->
         </Grid>
             
         <!--Customer Detail-->
+        <!--<usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl"
+                                                 Customer=" ********This App is Developed by******** , ****Shaggy Dev****, **Shaggy@devRuh.com**, *+94710380835*, false" />-->
+
         <usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl"
-                                                 Customer=" ********This App is Developed by******** , ****Shaggy Dev****, **Shaggy@devRuh.com**, *+94710380835*, false" />
+                                                 Customer="{Binding ElementName=customerListView, Path=SelectedItem, Mode=OneWay}" />
 
         <!--<usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl"
                                                  Customer="{StaticResource customerShaggy}" />-->
