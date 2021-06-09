@@ -7,13 +7,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="300"
-    d:DesignWidth="400">
+    d:DesignWidth="400" x:Name="root">
 
     <StackPanel>
-        <TextBox Header="First Name" Margin="10" x:Name="txtFirstName" TextChanged="TextBox_TextChanged"/>
-        <TextBox Header="Last Name" Margin="10" x:Name="txtLastName" TextChanged="TextBox_TextChanged"/>
-        <TextBox Header="Email" Margin="10" x:Name="txtEmail" TextChanged="TextBox_TextChanged"/>
-        <TextBox Header="Phone Number" Margin="10" x:Name="txtPhone" TextChanged="TextBox_TextChanged"/>
-        <CheckBox Content="Is Dinking Alcohol" Margin="10" x:Name="chkAlcohol" Checked="CheckBox_IsCheckedChanged" Unchecked="CheckBox_IsCheckedChanged"/>
+        <!--<TextBox Header="First Name" Margin="10" x:Name="txtFirstName" TextChanged="TextBox_TextChanged"/>-->
+        <TextBox Header="First Name" Margin="10" Text="{Binding ElementName=root, Path=Customer.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <!--<TextBox Header="Last Name" Margin="10" x:Name="txtLastName" TextChanged="TextBox_TextChanged"/>-->
+        <TextBox Header="Last Name" Margin="10" Text="{Binding ElementName=root, Path=Customer.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <!--<TextBox Header="Email" Margin="10" x:Name="txtEmail" TextChanged="TextBox_TextChanged"/>-->
+        <TextBox Header="Email" Margin="10" Text="{Binding ElementName=root, Path=Customer.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <!--<TextBox Header="Phone Number" Margin="10" x:Name="txtPhone" TextChanged="TextBox_TextChanged"/>-->
+        <TextBox Header="Phone Number" Margin="10" Text="{Binding ElementName=root, Path=Customer.TeleNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <!--<CheckBox Content="Is Dinking Alcohol" Margin="10" x:Name="chkAlcohol" Checked="CheckBox_IsCheckedChanged" Unchecked="CheckBox_IsCheckedChanged"/>-->
+        <CheckBox Content="Is Dinking Alcohol" Margin="10" IsChecked="{Binding ElementName=root, Path=Customer.IsAlcoholUser, Mode=TwoWay}"/>
     </StackPanel>
 </UserControl>
