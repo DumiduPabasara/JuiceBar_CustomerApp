@@ -24,7 +24,12 @@ namespace SexyJuiceBar_CustomerApp.UserControls
     public sealed partial class CustomerDetailsUserControl : UserControl
     {
 
-        private Customer _customer;
+        //private Customer _customer;
+
+        // Using a DependencyProperty as the backing store for Customer.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CustomerProperty =
+            DependencyProperty.Register("Customer", typeof(Customer), typeof(CustomerDetailsUserControl),
+                new PropertyMetadata(null, CustomerChangedCallBack));
 
         public CustomerDetailsUserControl()
         {
@@ -32,19 +37,43 @@ namespace SexyJuiceBar_CustomerApp.UserControls
         }
 
 
+        //public Customer Customer
+        //{
+        //    get { return _customer; }
+        //    set {
+        //        _customer = value;
+        //        txtFirstName.Text = _customer?.FirstName ?? "";
+        //        txtLastName.Text = _customer?.LastName ?? "";
+        //        txtEmail.Text = _customer?.Email ?? "";
+        //        txtPhone.Text = _customer?.TeleNo ?? "";
+        //        chkAlcohol.IsChecked = _customer?.IsAlcoholUser;
+        //    }
+        //}
+
+
+
         public Customer Customer
         {
-            get { return _customer; }
-            set {
-                _customer = value;
-                txtFirstName.Text = _customer?.FirstName ?? "";
-                txtLastName.Text = _customer?.LastName ?? "";
-                txtEmail.Text = _customer?.Email ?? "";
-                txtPhone.Text = _customer?.TeleNo ?? "";
-                chkAlcohol.IsChecked = _customer?.IsAlcoholUser;
-            }
+            get { return (Customer)GetValue(CustomerProperty); }
+            set { SetValue(CustomerProperty, value); }
         }
 
+        
+
+        private static void CustomerChangedCallBack(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if(d is CustomerDetailsUserControl customerDetailsUserControl)
+            {
+                var customer = e.NewValue as Customer
+                customerDetailsUserControl.txtFirstName.Text = customer?.FirstName ?? "";
+                customerDetailsUserControl.txtLastName.Text = customer?.LastName ?? "";
+                customerDetailsUserControl.txtEmail.Text = customer?.Email ?? "";
+                customerDetailsUserControl.txtPhone.Text = customer?.TeleNo ?? "";
+                customerDetailsUserControl.chkAlcohol.IsChecked = customer?.IsAlcoholUser;
+
+            }
+
+        }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

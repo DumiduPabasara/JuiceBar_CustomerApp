@@ -1,5 +1,6 @@
 ﻿using SexyJuiceBar_CustomerApp.DataProvider;
 using SexyJuiceBar_CustomerApp.Models;
+using SexyJuiceBar_CustomerApp.UserControls;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,6 +32,9 @@ namespace SexyJuiceBar_CustomerApp
 
         public MainPage()
         {
+            //customerDetailsUserControl.SetBinding(Grid.RowProperty);
+            //customerDetailsUserControl.Customer = null;
+            //customerDetailsUserControl.SetValue(CustomerDetailsUserControl.CustomerProperty, null);
             this.InitializeComponent();
             this.Loaded += MainPage_Loaded;
             App.Current.Suspending += App_Suspending;
