@@ -120,6 +120,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataProvider\CustomerDataProvider.cs" />
+    <Compile Include="DataProvider\ICustomerDataProvider.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -130,6 +131,7 @@
     <Compile Include="UserControls\CustomerDetailsUserControl.xaml.cs">
       <DependentUpon>CustomerDetailsUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

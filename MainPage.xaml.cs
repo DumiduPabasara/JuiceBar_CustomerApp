@@ -1,6 +1,7 @@
 ﻿using SexyJuiceBar_CustomerApp.DataProvider;
 using SexyJuiceBar_CustomerApp.Models;
 using SexyJuiceBar_CustomerApp.UserControls;
+using SexyJuiceBar_CustomerApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,7 +29,9 @@ namespace SexyJuiceBar_CustomerApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private CustomerDataProvider _customerDataProvider;
+        //private CustomerDataProvider _customerDataProvider;
+
+        public MainViewModel ViewModel { get; }
 
         public MainPage()
         {
@@ -36,9 +39,11 @@ namespace SexyJuiceBar_CustomerApp
             //customerDetailsUserControl.Customer = null;
             //customerDetailsUserControl.SetValue(CustomerDetailsUserControl.CustomerProperty, null);
             this.InitializeComponent();
+            ViewModel = new MainViewModel(new CustomerDataProvider());
+            DataContext = ViewModel;
             this.Loaded += MainPage_Loaded;
             App.Current.Suspending += App_Suspending;
-            _customerDataProvider = new CustomerDataProvider();
+            //_customerDataProvider = new CustomerDataProvider();
             RequestedTheme = App.Current.RequestedTheme == ApplicationTheme.Dark ? ElementTheme.Dark : ElementTheme.Light;
             //this.Resources.Add()
         }
@@ -46,20 +51,24 @@ namespace SexyJuiceBar_CustomerApp
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            customerListView.Items.Clear();
+            //customerListView.Items.Clear();
 
-            var customers =  await _customerDataProvider.LoadCustomersAsync();
+            //var customers =  await _customerDataProvider.LoadCustomersAsync();
 
-            foreach (var customer in customers)
-            {
-                customerListView.Items.Add(customer);
-            }
+            //foreach (var customer in customers)
+            //{
+            //    customerListView.Items.Add(customer);
+            //}
+
+            await ViewModel.LoadAsync();
+
         }
 
         private async void App_Suspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral(); //to make sure data saved before app closed
-            await _customerDataProvider.SaveCustomersAsync(customerListView.Items.OfType<Customer>());
+            //await _customerDataProvider.SaveCustomersAsync(customerListView.Items.OfType<Customer>());
+            await ViewModel.SaveAsync();
             deferral.Complete(); //to make sure data saved before app closed
         }
 

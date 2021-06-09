@@ -10,7 +10,7 @@ using Windows.Storage.Streams;
 
 namespace SexyJuiceBar_CustomerApp.DataProvider
 {
-    public class CustomerDataProvider
+    public class CustomerDataProvider : ICustomerDataProvider
     {
         private static readonly string _customersFileName = "customers.json";
         private static readonly StorageFolder _localFolder = ApplicationData.Current.LocalFolder;
@@ -20,7 +20,7 @@ namespace SexyJuiceBar_CustomerApp.DataProvider
             var storageFile = await _localFolder.TryGetItemAsync(_customersFileName) as StorageFile;
             List<Customer> customerList = null;
 
-            if(storageFile == null)
+            if (storageFile == null)
             {
                 customerList = new List<Customer>
                 {
@@ -29,9 +29,10 @@ namespace SexyJuiceBar_CustomerApp.DataProvider
                     new Customer {CustomerId=3, FirstName="Makara", LastName="Suti", Email="makarasuti@gmail.com", TeleNo="0777894561", IsAlcoholUser=false }
                 };
 
-            } else
+            }
+            else
             {
-                using (var stream =await storageFile.OpenAsync(FileAccessMode.Read))
+                using (var stream = await storageFile.OpenAsync(FileAccessMode.Read))
                 {
                     using (var dataReader = new DataReader(stream))
                     {
