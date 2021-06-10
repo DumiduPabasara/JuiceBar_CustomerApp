@@ -1,4 +1,5 @@
-﻿using SexyJuiceBar_CustomerApp.DataProvider;
+﻿using SexyJuiceBar_CustomerApp.Base;
+using SexyJuiceBar_CustomerApp.DataProvider;
 using SexyJuiceBar_CustomerApp.Models;
 using System;
 using System.Collections.Generic;
@@ -9,16 +10,33 @@ using System.Threading.Tasks;
 
 namespace SexyJuiceBar_CustomerApp.ViewModels
 {
-    public class MainViewModel
+    public class MainViewModel: Observable
     {
 
         private ICustomerDataProvider _customerDataProvider;
+
+        private Customer _selectedCustomer;
 
         public MainViewModel(ICustomerDataProvider customerDataProvider)
         {
             _customerDataProvider = customerDataProvider;
             Customers = new ObservableCollection<Customer>();
         }
+
+        public Customer SelectedCustomer
+        {
+            get { return _selectedCustomer; }
+            set { 
+
+                if(_selectedCustomer != value)
+                {
+                    _selectedCustomer = value;
+                    OnPropertyChanged();
+                }
+               
+            }
+        }
+                
 
         public ObservableCollection<Customer> Customers { get; }
 
