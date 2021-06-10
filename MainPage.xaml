@@ -95,15 +95,27 @@
                 <ListViewItem>Goyya</ListViewItem>
                 <ListViewItem>Makara Suti</ListViewItem>--><!--
             </ListView>-->
-            <ListView Grid.Row="1" ItemsSource="{Binding Path=Customers, Mode=OneWay}"
+            <!--<ListView Grid.Row="1" ItemsSource="{Binding Path=Customers, Mode=OneWay}"
                       SelectedItem="{Binding Path=SelectedCustomer, Mode=TwoWay}"
                       x:Name="customerListView"
-                      DisplayMemberPath="FirstName">
-                <!--This way also fine (default values) 👇-->
+                      DisplayMemberPath="FirstName">-->
+            <!--This way also fine (default values) 👇-->
             <!--<ListView Grid.Row="1" ItemsSource="{Binding Customers}"
                     SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}"
                     x:Name="customerListView"
                     DisplayMemberPath="FirstName">-->
+            <ListView Grid.Row="1" ItemsSource="{Binding Path=Customers, Mode=OneWay}"
+                      SelectedItem="{Binding Path=SelectedCustomer, Mode=TwoWay}"
+                      x:Name="customerListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding FirstName, Mode=OneWay}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding LastName, Mode=OneWay}" FontWeight="Thin" Margin="5 0 0 0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+           
             </ListView>
             <!--</StackPanel>-->
         </Grid>
