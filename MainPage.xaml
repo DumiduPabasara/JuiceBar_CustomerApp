@@ -72,13 +72,15 @@
                     <SymbolIcon Symbol="Forward"
                                 x:Name="moveSymbolIcon"/>
                 </Button>
-                <Button Margin="10" Click="BtnAddCustomer_Click" >
+                <!--<Button Margin="10" Click="BtnAddCustomer_Click" >-->
+                <Button Margin="10" Click="{x:Bind ViewModel.AddCustomer}" >
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Symbol="AddFriend"/>
                         <TextBlock Text="Add" Margin="5 0 0 0"/>
                     </StackPanel>
                 </Button>
-                <Button Margin="10" Click="BtnDeleteCustomer_Click" >
+                <!--<Button Margin="10" Click="BtnDeleteCustomer_Click" >-->
+                <Button Margin="10" Click="{x:Bind ViewModel.DeleteCustomer}" IsEnabled="{x:Bind ViewModel.IsCustomerSelected, Mode=OneWay}">
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Symbol="Delete"/>
                         <TextBlock Text="Delete" Margin="5 0 0 0"/>
@@ -107,9 +109,11 @@
             <!--<ListView Grid.Row="1" ItemsSource="{Binding Path=Customers, Mode=OneWay}"
                       SelectedItem="{Binding Path=SelectedCustomer, Mode=TwoWay}"
                       x:Name="customerListView">-->
-            <ListView Grid.Row="1" ItemsSource="{x:Bind ViewModel.Customers, Mode=OneWay}"
+            <!--<ListView Grid.Row="1" ItemsSource="{x:Bind ViewModel.Customers, Mode=OneWay}"
                       SelectedItem="{x:Bind ViewModel.SelectedCustomer, Mode=TwoWay}"
-                      x:Name="customerListView">
+                      x:Name="customerListView">-->
+            <ListView Grid.Row="1" ItemsSource="{x:Bind ViewModel.Customers, Mode=OneWay}"
+                      SelectedItem="{x:Bind ViewModel.SelectedCustomer, Mode=TwoWay}" >
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:Customer">
                         <StackPanel Orientation="Horizontal">
