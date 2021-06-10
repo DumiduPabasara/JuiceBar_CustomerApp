@@ -32,11 +32,13 @@ namespace SexyJuiceBar_CustomerApp.ViewModels
                 {
                     _selectedCustomer = value;
                     OnPropertyChanged();
+                    OnPropertyChanged(nameof(IsCustomerSelected));
                 }
                
             }
         }
-                
+
+        public bool IsCustomerSelected => SelectedCustomer != null;                
 
         public ObservableCollection<Customer> Customers { get; }
 

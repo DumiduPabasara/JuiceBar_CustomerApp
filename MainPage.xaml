@@ -117,6 +117,7 @@
                             <TextBlock Text="{x:Bind FirstName, Mode=OneWay}" FontWeight="Bold"/>
                             <!--<TextBlock Text="{Binding LastName, Mode=OneWay}" FontWeight="Thin" Margin="5 0 0 0"/>-->
                             <TextBlock Text="{x:Bind LastName, Mode=OneWay}" FontWeight="Thin" Margin="5 0 0 0"/>
+                            <TextBlock Text="(Alcoholic)" Margin="5 0 0 0" Opacity="0.5" Visibility="{x:Bind IsAlcoholUser, Mode=OneWay}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -134,7 +135,8 @@
         <!--<usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1"
                                                  Customer="{Binding SelectedCustomer, Mode=OneWay}" />-->
         <usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1"
-                                                 Customer="{x:Bind ViewModel.SelectedCustomer, Mode=OneWay}" />
+                                                 Customer="{x:Bind ViewModel.SelectedCustomer, Mode=OneWay}"
+                                                 Visibility="{x:Bind ViewModel.IsCustomerSelected, Mode=OneWay}"/>
 
 
         <!--<usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl"
