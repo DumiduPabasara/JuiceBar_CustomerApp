@@ -104,8 +104,11 @@
                     SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}"
                     x:Name="customerListView"
                     DisplayMemberPath="FirstName">-->
-            <ListView Grid.Row="1" ItemsSource="{Binding Path=Customers, Mode=OneWay}"
+            <!--<ListView Grid.Row="1" ItemsSource="{Binding Path=Customers, Mode=OneWay}"
                       SelectedItem="{Binding Path=SelectedCustomer, Mode=TwoWay}"
+                      x:Name="customerListView">-->
+            <ListView Grid.Row="1" ItemsSource="{x:Bind ViewModel.Customers, Mode=OneWay}"
+                      SelectedItem="{x:Bind ViewModel.SelectedCustomer, Mode=TwoWay}"
                       x:Name="customerListView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -126,8 +129,10 @@
 
         <!--<usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl"
                                                  Customer="{Binding ElementName=customerListView, Path=SelectedItem, Mode=OneWay}" />-->
+        <!--<usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1"
+                                                 Customer="{Binding SelectedCustomer, Mode=OneWay}" />-->
         <usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1"
-                                                 Customer="{Binding SelectedCustomer, Mode=OneWay}" />
+                                                 Customer="{x:Bind ViewModel.SelectedCustomer, Mode=OneWay}" />
 
 
         <!--<usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl"
