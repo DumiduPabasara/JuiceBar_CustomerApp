@@ -11,7 +11,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     d:DesignWidth="600"
     d:DesignHeight="400">
-    <!--Learning-->
+    <!--Learning 2-->
     <!--<Page.Content>-->
     <!--<Page.Resources>
         --><!--<model:Customer x:Key="customerThalla" FirstName="Thalla" LastName="React NodeJS JS Developer" Email="Thalla@devRuh.com" TeleNo="+94775387165" IsAlcoholUser="True" />
