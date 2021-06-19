@@ -140,7 +140,8 @@
                                                  Customer="{Binding SelectedCustomer, Mode=OneWay}" />-->
         <usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1"
                                                  Customer="{x:Bind ViewModel.SelectedCustomer, Mode=OneWay}"
-                                                 Visibility="{x:Bind ViewModel.IsCustomerSelected, Mode=OneWay}"/>
+                                                 Visibility="{x:Bind ViewModel.IsCustomerSelected, Mode=OneWay}" d:IsHidden="True"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="103" Margin="80,65,0,0" Grid.Row="1" Text="This app is developed by Shaggy ©2021" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="207"/>
 
 
         <!--<usercontrols:CustomerDetailsUserControl Grid.Row="1" Grid.Column="1" x:Name="customerDetailsUserControl"
