@@ -9,30 +9,34 @@
     d:DesignHeight="300"
     d:DesignWidth="400" x:Name="root">
     <UserControl.Resources>
-        <Windows10version1809:Style x:Key="myTextboxStyles" TargetType="TextBox">
+        <!--<Windows10version1809:Style x:Key="myTextboxStyles" TargetType="TextBox">
             <Setter Property="Margin" Value="10" />
             <Setter Property="CornerRadius" Value="5" />
-            <!--<Setter Property="Grid.Row" Value="1" />-->
-        </Windows10version1809:Style>
+            --><!--<Setter Property="Grid.Row" Value="1" />--><!--
+        </Windows10version1809:Style>-->
     </UserControl.Resources>
 
     <StackPanel>
         <!--<TextBox Header="First Name" Margin="10" x:Name="txtFirstName" TextChanged="TextBox_TextChanged"/>-->
         <!--<TextBox Header="First Name" Margin="10" Text="{Binding ElementName=root, Path=Customer.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
         <!--<TextBox Header="First Name" Margin="10" Windows10version1809:CornerRadius="5" Text="{x:Bind Customer.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
-        <TextBox Header="First Name" Style="{StaticResource myTextboxStyles}" Text="{x:Bind Customer.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <!--<TextBox Header="First Name" Style="{StaticResource myTextboxStyles}" Text="{x:Bind Customer.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+        <TextBox Header="First Name" Text="{x:Bind Customer.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         <!--<TextBox Header="Last Name" Margin="10" x:Name="txtLastName" TextChanged="TextBox_TextChanged"/>-->
         <!--<TextBox Header="Last Name" Margin="10" Text="{Binding ElementName=root, Path=Customer.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
         <!--<TextBox Header="Last Name" Margin="10" Windows10version1809:CornerRadius="5" Text="{x:Bind Customer.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
-        <TextBox Header="Last Name" Style="{StaticResource myTextboxStyles}" Text="{x:Bind Customer.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <!--<TextBox Header="Last Name" Style="{StaticResource myTextboxStyles}" Text="{x:Bind Customer.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+        <TextBox Header="Last Name" Text="{x:Bind Customer.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         <!--<TextBox Header="Email" Margin="10" x:Name="txtEmail" TextChanged="TextBox_TextChanged"/>-->
         <!--<TextBox Header="Email" Margin="10" Text="{Binding ElementName=root, Path=Customer.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
         <!--<TextBox Header="Email" Margin="10" Windows10version1809:CornerRadius="5" Text="{x:Bind Customer.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
-        <TextBox Header="Email" Style="{StaticResource myTextboxStyles}" Text="{x:Bind Customer.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <!--<TextBox Header="Email" Style="{StaticResource myTextboxStyles}" Text="{x:Bind Customer.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+        <TextBox Header="Email" Text="{x:Bind Customer.Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         <!--<TextBox Header="Phone Number" Margin="10" x:Name="txtPhone" TextChanged="TextBox_TextChanged"/>-->
         <!--<TextBox Header="Phone Number" Margin="10" Text="{Binding ElementName=root, Path=Customer.TeleNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
         <!--<TextBox Header="Phone Number" Margin="10" Windows10version1809:CornerRadius="5" Text="{x:Bind Customer.TeleNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
-        <TextBox Header="Phone Number" Style="{StaticResource myTextboxStyles}" Text="{x:Bind Customer.TeleNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <!--<TextBox Header="Phone Number" Style="{StaticResource myTextboxStyles}" Text="{x:Bind Customer.TeleNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+        <TextBox Header="Phone Number" Text="{x:Bind Customer.TeleNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         <!--<CheckBox Content="Is Dinking Alcohol" Margin="10" x:Name="chkAlcohol" Checked="CheckBox_IsCheckedChanged" Unchecked="CheckBox_IsCheckedChanged"/>-->
         <!--<CheckBox Content="Is Dinking Alcohol" Margin="10" IsChecked="{Binding ElementName=root, Path=Customer.IsAlcoholUser, Mode=TwoWay}"/>-->
         <CheckBox Content="Is Dinking Alcohol" Margin="10" IsChecked="{x:Bind Customer.IsAlcoholUser, Mode=TwoWay}"/>
